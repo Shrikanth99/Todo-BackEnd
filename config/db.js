@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const configureDb = async() => {
     const dbName = process.env.dbName
-    const dbUrl = 'mongodb://127.0.0.1:27017'
+    const dbUrl = process.env.dbUrl
     try {
         await mongoose.connect(`${dbUrl}/${dbName}`)
         console.log(`connected to the book-store database`)
